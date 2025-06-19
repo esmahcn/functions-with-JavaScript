@@ -53,11 +53,21 @@ function getNumbers() {
     if (!input.includes(",")) {
         alert("Please separate numbers with commas .");
         let newInput = input.split(/\s+/).join(", ");
-
-        // Update the input field with the commas
-
     }
-
     // Normal case, split on commas
     return input.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
 }
+
+function factorial(n) {
+  if (n < 0) return undefined; // Factorial not defined for negative numbers
+  if (n === 0 || n === 1) return 1;
+
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+// Example:
+console.log(factorial(5)); // 120
